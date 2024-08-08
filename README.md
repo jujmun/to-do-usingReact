@@ -16,6 +16,5 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-[1] Save each log on Firebase
 [2] Refresh to-do list every day
 [3] Add in a task from the server (healthy habit)
