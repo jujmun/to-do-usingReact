@@ -96,7 +96,7 @@ export default function Todo() {
 
   return (
     <main className="flex items-center justify-center min-h-screen bg-black bg-cover">
-      <div className="container mx-auto p-4 max-w-md text-white bg-opacity-50">
+      <div className="container mx-auto p-4 max-w-sm text-white bg-opacity-50">
         <div className="flex items-center mb-2">
         <h1 id="titleText" className="text-2xl font-bold font-mono ">
           To-Do List
