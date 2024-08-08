@@ -9,8 +9,15 @@ interface Task {
   name: string;
 }
 
+
+
 export default function Done() {
   const [tasks, setTasks] = useState<Task[]>([]);
+  const router = useRouter();
+
+  const taskBtn = () => {
+    router.push('/')
+  }
 
   useEffect(() => {
     const q = query(collection(db, 'doneTask'));
@@ -34,13 +41,29 @@ export default function Done() {
       <div className="container mx-auto p-4 max-w-md text-white bg-opacity-50">
         {
           tasks.length > 0 ? (
-            <h1 id="titleText" className="text-2xl font-bold font-mono mb-4">
-              Done! 🎉
+            <div className="flex items-center mb-2">
+            <h1 id="titleText" className="text-2xl font-bold font-mono ">
+              Done!
             </h1>
+            <button 
+                onClick={taskBtn}
+                className="text-2xl p-1 rounded text-white ml-5"
+              >
+                🎉
+              </button>
+            </div>
           ) : (
-            <h1 id="titleText" className="text-center text-2xl font-bold font-mono mb-4">
+            <div className="flex flex-col items-center">
+            <h1 id="titleText" className="text-2xl font-bold font-mono text-center mb-5">
               Finish your tasks!
             </h1>
+            <button 
+                onClick={taskBtn}
+                className="text-xl text-white text-center font-mono outline outline-2 p-2 w-30"
+              >
+                Okay...
+              </button>
+            </div>
           )
         }
         <ol className="taskSheet list-decimal leading-loose space-y-2">
